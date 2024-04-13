@@ -1,8 +1,6 @@
 
 import NavBar from "./components/NavBar.js"
-import SearchBar from "./components/SearchBar.js"
-import Map from './components/Map.js'
-import Card from './components/Card.js'
+import Grid from "./components/Grid.js"
 
 
 
@@ -52,24 +50,8 @@ const Home = async ()=>{
   return (
     <>
     <NavBar></NavBar>
-    <SearchBar></SearchBar>
-    <main>
-      <article className="map">
-        <Map></Map>
-      </article>
-      <article className="listings">
-        <h2 style={{padding:'20px'}}>Rental Listings</h2>
-        <div className="card-container">
-            {properties.map(property=><Card key={property.id}
-                                            propertyName={property.name}
-                                            slug={property.slug}
-                                            rentalPrice={property.rentalPrice}
-                                            beds={property.beds}
-                                            image={property.images[0]}>
-            </Card>)}
-        </div>
-      </article>
-    </main>
+    <Grid properties={properties}></Grid>
+    
     </>
   )
 }

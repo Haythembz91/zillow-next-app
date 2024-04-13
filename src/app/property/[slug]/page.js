@@ -1,3 +1,4 @@
+import NavBar from './../../components/NavBar.js'
 import Link from 'next/link.js'
 
 
@@ -55,7 +56,10 @@ const Property = async ({params})=>{
     console.log(property.name)
 
     return(
-        <div className='final-container'>  
+        <div>
+            <NavBar></NavBar>
+            <>
+            <div className='final-container'>  
             <div className="image-container">                
                     {property.images.map(image=>
                         <img key={image.id} src={image.url} alt={image.fileName}></img>
@@ -82,6 +86,7 @@ const Property = async ({params})=>{
 
             <Link href={"/"}><button>Go Back</button></Link>
             </div>
+        </div></>
         </div>
         
     )
