@@ -3,7 +3,7 @@ import Images from './Images'
 const Card =({propertyName,slug,rentalPrice,beds,image})=>{
 
     return (
-        <Link href={`/property/${slug}`} target={'_blank'}>
+        <Link href={`/property/${slug}`}>
             <div className={'card'}>
                 <Images url={image.url} fileName={image.fileName}></Images>
                 <div className={'text-container'}>
