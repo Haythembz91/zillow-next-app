@@ -4,7 +4,7 @@ import Link from 'next/link.js'
 
 
 const getProperty = async (slug) => {
-    const HYGRAPH_ENDPOINT = process.env.HYGRAPH_ENDPOINT
+    const HYGRAPH_ENDPOINT = 'https://eu-west-2.cdn.hygraph.com/content/cluvvu2nn13ya08waujkgrs42/master'
     if(!HYGRAPH_ENDPOINT){
         throw new Error('Please provide a valid HyGraph Endpoint')
     }
@@ -54,6 +54,7 @@ const getProperty = async (slug) => {
 const Property = async ({params})=>{
     const property = await getProperty(params.slug)
     console.log(property.name)
+    console.log(params.slug)
 
     return(
         <div>
